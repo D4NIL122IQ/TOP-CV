@@ -1,0 +1,18 @@
+.formu{
+    width: 40vw;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+
+.formu>input{
+    width: 25vw;
+    height: 30px;
+    font-size: large;
+    margin: 0px auto;
+}
+.formu>label{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
