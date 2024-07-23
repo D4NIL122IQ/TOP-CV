@@ -13,35 +13,35 @@ function SetSkills({info, maj, index , sup}){
 }
 
 export default function AfficherTech ({annuler , tabTechSkill , maj}){
-    const [skillDispo , setskillDispo] = useState(tabTechSkill)
+    const [teckskilDispo , setteckskilDispo] = useState(tabTechSkill)
     
     const majTechSkill = (index, updatedSkill) => {
-        setskillDispo(() => {
-            const newTechSkills = [...skillDispo];
+        setteckskilDispo(() => {
+            const newTechSkills = [...teckskilDispo];
             newTechSkills[index] = updatedSkill;
             return newTechSkills;
         });
         };
     const supTechSkill=(index)=>{
-        setskillDispo(()=>{
-            return [...skillDispo].filter((_,i)=>i!=index)
+        setteckskilDispo(()=>{
+            return [...teckskilDispo].filter((_,i)=>i!=index)
         })
     }
     const ajouterLigneTabTechSkill = ()=>{
-        setskillDispo(()=>{
-            if(skillDispo.length >10){return skillDispo}
-            return [...skillDispo, {title:"",description:""}]
+        setteckskilDispo(()=>{
+            if(teckskilDispo.length >10){return teckskilDispo}
+            return [...teckskilDispo, {title:"",description:""}]
         })
     }
     return (
         <div>
             <div>
-                {skillDispo.map((sk,index)=>{
+                {teckskilDispo.map((sk,index)=>{
                    return <SetSkills info={sk} index={index} maj={majTechSkill} key={index} sup={supTechSkill}/>
                 })}
             </div>
-            <button type="button" onClick={()=>{ajouterLigneTabTechSkill(); maj(skillDispo)}} id="add">Ajouter</button>
-            <button type="button" onClick={()=>{maj(skillDispo);annuler(false)}} id="submit">Confirmer</button>
+            <button type="button" onClick={()=>{ajouterLigneTabTechSkill(); maj(teckskilDispo)}} id="add">Ajouter</button>
+            <button type="button" onClick={()=>{maj(teckskilDispo);annuler(false)}} id="submit">Confirmer</button>
             <button type="button" onClick={()=>{annuler(false)}} id="cancel">Annuler</button>
         </div>
     )

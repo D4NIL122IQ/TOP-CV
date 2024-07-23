@@ -6,7 +6,7 @@ function AfficherProfil({annuler, variab ,majvariab}) {
 
   return (
     <div>
-      <h1>Information Personnel</h1>
+      <h1>INFORMATIONS</h1>
       <label htmlFor="fname">Nom et Prénom</label>
       <input
         type='text'
