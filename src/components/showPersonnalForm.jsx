@@ -1,12 +1,8 @@
 import '../style/generalStyleForForm.css'
 import {useState} from 'react'
 
-function AfficherProfil({annuler}) {
-  const [nom, setNom] = useState('Hatake Kakashi');
-  const [statut, setStatut] = useState('Enseignant');
-  const [telephone, setTelephone] = useState('+1 123-456-789');
-  const [email, setEmail] = useState('kakashi@exemple.com');
-  const [adresse, setAdresse] = useState('12 rue je sais pas, konoha');
+function AfficherProfil({annuler, variab ,majvariab}) {
+  const [infoperso , setinfoperso] = useState(variab)
 
   return (
     <div>
@@ -15,38 +11,38 @@ function AfficherProfil({annuler}) {
       <input
         type='text'
         id='fname'
-        value={nom}
-        onChange={(e) => setNom(e.target.value)}
+        value={infoperso.fullname}
+        onChange={(e) => setinfoperso({...infoperso , fullname:e.target.value})}
       />
       <label htmlFor="function">Statut</label>
       <input
         type='text'
         id='function'
-        value={statut}
-        onChange={(e) => setStatut(e.target.value)}
+        value={infoperso.func}
+        onChange={(e) => setinfoperso({...infoperso , func:e.target.value})}
       />
       <label htmlFor="phone">Téléphone</label>
       <input
         type='tel'
         id='phone'
-        value={telephone}
-        onChange={(e) => setTelephone(e.target.value)}
+        value={infoperso.phone}
+        onChange={(e) => setinfoperso({...infoperso , phone: e.target.value})}
       />
       <label htmlFor="mail">E-mail</label>
       <input
         type='email'
         id='mail'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={infoperso.mail}
+        onChange={(e) => setinfoperso({...infoperso , mail: e.target.value})}
       />
       <label htmlFor="adrs">Adresse</label>
       <input
         type='text'
         id='adrs'
-        value={adresse}
-        onChange={(e) => setAdresse(e.target.value)}
+        value={infoperso.adrs}
+        onChange={(e) => setinfoperso({...infoperso , adrs:e.target.value})}
       />
-      <input type="button" value="Sauvgarder" />
+      <input type="button" value="Sauvgarder" onClick={()=>{majvariab(infoperso);{/*maj dans le pdf*/};annuler(false)}}/>
       <input type="button" value="Annuler" onClick={()=>{annuler(false)}} />
     </div>)
 }

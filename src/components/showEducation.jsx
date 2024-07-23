@@ -1,4 +1,4 @@
-import '../style/generalStyleForForm.css'
+
 import {useState} from 'react'
 
 
