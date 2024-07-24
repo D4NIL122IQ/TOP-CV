@@ -2,10 +2,10 @@ import { useState } from "react";
 
 function DisplaySkills({skil , supprimer ,index, maj}) {
     return (
-        <>  
+        <div className="compete">  
             <input type="text"  value={skil} onChange={(e)=>{maj(index ,e.target.value)}} />
-            <input type="button" value="Supprimer" onClick={()=>{supprimer(index)}}/>
-        </>
+            <button onClick={()=>{supprimer(index)}} id="supprimer">Supprimer</button>
+        </div>
     )
 }
 
@@ -35,13 +35,18 @@ export default function AfficherSkills ({annuler , skills , maj}){
     }
 
     return(
-        <>  
+        <div className="skills">  
+            <h1>Compétences</h1>
+            <div className="competeContainer">
             {skillsDispo.map((sk,index)=>(
                 <DisplaySkills key={index} skil={sk} index={index} supprimer={supSkil} maj={majSkil}/>
             ))}
-            <button onClick={()=>{ajouterSkil(); maj(skillsDispo)}}>Ajouter</button>
-            <button onClick={()=>{maj(skillsDispo); annuler(false)}}>Confirmer</button>
-            <button onClick={()=>{ annuler(false)}}>Annuler</button>
-        </>
+            </div>
+            <div className="btn">
+            <button onClick={()=>{ajouterSkil(); maj(skillsDispo)}} id="ajouter">Ajouter</button>
+            <button onClick={()=>{maj(skillsDispo); annuler(false)}} id="confirmation">Confirmer</button>
+            <button onClick={()=>{ annuler(false)}} id="annulation">Annuler</button>
+            </div>
+        </div>
     )
 }
