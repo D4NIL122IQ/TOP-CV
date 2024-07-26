@@ -1,4 +1,3 @@
-import '../style/generalStyleForForm.css'
 import {useState} from 'react'
 
 
@@ -19,7 +18,7 @@ function AfficherFormation({education ,index , maj , sup}) {
         </div>
         <div>
         <label htmlFor="end">Annee de sortie : </label>
-        <input type="number" name='end' onChange={(e)=>{maj(index,{...education , end: e.target.value})}} value={education.end}/>
+        <input type="text" name='end' onChange={(e)=>{maj(index,{...education , end: e.target.value})}} value={education.end}/>
         </div>
         <div>
         <label htmlFor="loc">Localisation : </label>

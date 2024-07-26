@@ -1,4 +1,3 @@
-import "../style/generalStyleForForm.css"
 import { useState } from "react";
 
 function SetSkills({info, maj, index , sup}){
