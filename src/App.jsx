@@ -75,6 +75,7 @@ function App() {
   
 
   return (
+    <>
     <section>
       {/* buttons pour choisir une section */}
     <div className='choixButton'>
@@ -116,6 +117,11 @@ function App() {
       <AfficherPreview infoPerso={infoperso} infoFormation={formation} infoPro={experience} infoSkills={skills} infoTechSkills={techSkillDispo} />
      </div>
     </section>
+    <footer>
+      <a href="http://github.com/D4NIL122IQ" target="_blank" rel="noopener noreferrer"><h5>By Danil gdj</h5></a>
+      
+    </footer>
+    </>
   )
 }
 

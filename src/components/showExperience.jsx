@@ -48,7 +48,7 @@ export default function AfficherExerience({exp ,annuler , maj}) {
     }
     const ajouterXp = ()=>{
         setXp(()=>{
-            if([...xp].length >5){
+            if([...xp].length >4){
                 return [...xp]
             }else{
                 return [...xp , {company:"",fonction:"",location: "", description: "" , start:"", end:""}]

@@ -45,7 +45,7 @@ export default function AddingNewEducation({annuler , formation , maj}) {
     }
     const ajouterEduc =()=>{
         setEducation(()=>{
-            if([...education].length >4 ){
+            if([...education].length >3 ){
                 return [...education]
             }else{
                 return [...education , {school: "", degree: "", start: "", end: "", location: ""}]
