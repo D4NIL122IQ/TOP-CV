@@ -1,21 +1,24 @@
 import { useState } from 'react'
 import './App.css'
 import Modal from 'react-modal'
+import "./style/style.css"
 
 import AfficherProfil from './components/showPersonnalForm';
 import  AddingNewEducation from './components/showEducation.jsx'
 import AfficherTech from './components/showTechnical.jsx';
 import AfficherSkills from './components/showSkills.jsx';
-import { PDFViewer } from '@react-pdf/renderer';
-import ShowPdfPreview from './components/pdfPreview.jsx'
+import AfficherExerience from './components/showExperience.jsx';
+
+import AfficherPreview from './components/pdfPreview.jsx';
 
 
 
 function App() {
   const [profil , setprofil] = useState(false)
   const [education , seteducation] = useState(false)
+  const [exp , setExp] = useState(false)
   const [tech , settech] = useState(false)
-  const [skill , setskill] = useState(false)
+  const [skill , setskill] = useState(false) 
 
   const [infoperso, majInfoperson] =useState({
     fullname:"Hatake Kakashi",
@@ -23,14 +26,23 @@ function App() {
     mail:"kakashi@exemple.com",
     adrs:"12 rue jsp, Konoha",
     phone: "+1 123-456-789"})
-  
+   
   const [formation ,setFormation] =useState([{
     school: "abderahmane mira",
     degree: "Licence",
     start: "2022",
     end: "2025",
     location: "bejaia"
-}])
+    }])
+
+  const [experience , setExperience] = useState([{
+    company:"Dawasushi",
+    fonction:"Devloppeur web",
+    location: "Bejaia",
+    description: "je me suis occuper de frontend de leurs site presentation",
+    start:"Juin 2024",
+    end: "Maintenant"
+  }])
   const [techSkillDispo , settechSkillDispo] = useState([
     {title:"Language" ,description:"HTML, CSS, JavaScript"},
     {title:"framework", description:"React, NodeJs"}])
@@ -38,11 +50,17 @@ function App() {
   const [skills , setSkills] = useState([
     "talenteux", "Sportif" ,"Creatif"
   ])
-
+  
+  let widthModal
+  if(window.innerWidth > 600){
+      widthModal = "500px"
+  }else if(window.innerWidth > 320){
+      widthModal = "350px"
+  }
   const styleModal ={
     content: {
       color: 'black',
-      width: '500px',
+      width: widthModal,
       padding: '20px',
       borderRadius: '10px',
       margin: '0px auto',
@@ -52,6 +70,9 @@ function App() {
       textAlign:"center"
     },
   }
+  
+
+  
 
   return (
     <section>
@@ -61,11 +82,11 @@ function App() {
 
       <button onClick={()=>{ seteducation(!education)}}> Ajouter Education</button>
 
-      <button onClick={()=>{ settech(!tech)}}> Technical Skills </button>
+      <button onClick={()=>{ setExp(!exp)}}>Experience</button>
 
       <button onClick={()=>{ setskill(!skill)}}> Skills </button>
 
-      <button>Telecharger</button>
+      <button onClick={()=>{ settech(!tech)}}> Technical Skills </button>
     </div>
 
     {/* modal de chaque section */}
@@ -79,6 +100,10 @@ function App() {
       <AddingNewEducation annuler={seteducation} formation={formation} maj={setFormation} />
     </Modal>
 
+    <Modal isOpen={exp}  onRequestClose={() => setExp(false)} style={styleModal} ariaHideApp={false}>
+      <AfficherExerience annuler={setExp} exp={experience} maj={setExperience} />
+    </Modal>
+
     <Modal isOpen={skill} onRequestClose={() => setskill(false)} style={styleModal} ariaHideApp={false}>
       <AfficherSkills annuler={setskill} skills={skills} maj={setSkills}/>
     </Modal>
@@ -87,12 +112,9 @@ function App() {
       <AfficherTech annuler={settech} tabTechSkill={techSkillDispo} maj={settechSkillDispo}/>
     </Modal>
 
-
-    {/* <div className='previewPDF'>
-      <PDFViewer width='300px' height='800px'>
-        <ShowPdfPreview  />
-      </PDFViewer>
-    </div> */}
+    <div className='preview'>
+      <AfficherPreview infoPerso={infoperso} infoFormation={formation} infoPro={experience} infoSkills={skills} infoTechSkills={techSkillDispo} />
+     </div>
     </section>
   )
 }
