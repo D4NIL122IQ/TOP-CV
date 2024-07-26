@@ -1,3 +1,10 @@
+*,
+::after,
+::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 /* pour un style general */
 #annulation:hover{
     transform: scale(1.1);
@@ -83,6 +90,36 @@ label{
     align-items: center;
     height: 70px;
 }
+
+/* pour le modal experience */
+.experience>div{
+    height: 400px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+.experience>div>.expp{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    text-align: start;
+    gap: 9px;
+    margin-bottom: 10px;
+}
+.experience>div>.expp>div>input{
+    height: 20px;
+    width: 50%;
+}
+.experience>div>.expp>button{
+    margin-left: 70%;
+    width: 100px;
+
+}
+.experience>.btn{
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 /* pour le modal des competences technique */
 .technique>div{
     display: flex;
@@ -95,11 +132,6 @@ label{
 .technique>h1{
     font-size: 2.8rem;
 }
-
-.tech{
-    font-size: 1.1rem;
-}
-
 
 .tech>div{
     width: 10%;
@@ -137,4 +169,90 @@ label{
 .skills>.btn{
     display: flex;
     justify-content: space-around;
+}
+
+/* pour la preview du cv  */
+.cvpdf{
+    background-color: #fff;
+    color: black;
+    width: 70vw;
+    height: 297mm;
+    display: flex;
+    text-align: start;
+}
+#aside{
+    background-color: grey;
+    padding: 10px;
+    width: 30vw;
+    word-wrap: break-word; 
+    word-break: break-all; 
+    white-space: normal; 
+}
+#aside>div>h2{
+    text-align: center;
+    text-decoration: underline;
+    font-size: x-large;
+}
+#info{
+    display: flex;
+    gap: 10px;
+}
+
+li{
+    list-style:square;
+    font-size: large;
+}
+#tsk{
+    display: flex;
+    align-items: center;
+}
+#tsk>h3{
+    text-transform: capitalize;
+}
+#article{
+    padding: 10px;
+    width: 70vw;
+    word-wrap: break-word; 
+    word-break: break-all; 
+    white-space: normal; 
+}
+#head{
+    text-align: center;
+}
+#head>h1{
+    margin: 0px;
+    font-size: 4rem;
+}
+#head>p{
+    margin: 0px;
+    font-weight: bold;
+}
+
+#formation>h2,
+#Exp>h2{
+    text-align: center;
+    margin: 0px;
+    font-size: 2rem;
+    text-decoration: underline;
+}
+#formation>div>h4{
+    margin: 0px;
+}
+#article>hr{
+    border: none;
+    border-top: 2px double black;
+    height: 3px;
+    margin: 5px;
+}
+#experience>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#experience,
+#education{
+    padding: 15px;
+}
+@media screen and (max-width: 600px) {
+    
 }
