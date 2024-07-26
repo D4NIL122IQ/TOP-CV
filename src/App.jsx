@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Modal from 'react-modal'
 import "./style/style.css"
-
+import { FaGithub } from "react-icons/fa";
 import AfficherProfil from './components/showPersonnalForm';
 import  AddingNewEducation from './components/showEducation.jsx'
 import AfficherTech from './components/showTechnical.jsx';
@@ -118,8 +118,7 @@ function App() {
      </div>
     </section>
     <footer>
-      <a href="http://github.com/D4NIL122IQ" target="_blank" rel="noopener noreferrer"><h5>By Danil gdj</h5></a>
-      
+      <a href="http://github.com/D4NIL122IQ" target="_blank" rel="noopener noreferrer"><FaGithub/>By Danil gdj</a>    
     </footer>
     </>
   )
