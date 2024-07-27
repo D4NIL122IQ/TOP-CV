@@ -10,7 +10,7 @@ function AfficherFormation ({formation}){
     return (
         <div id="education">
             <div>
-            <h3 id="titre">■ {formation.degree}</h3>
+            <h3 id="titre">-{formation.degree}</h3>
             <h4 id="localisation">{formation.school}</h4>
             </div>
             <h5>{formation.start} - {formation.end}</h5>
@@ -66,7 +66,7 @@ export default function AfficherPreview({infoPerso ,infoFormation , infoPro , in
         pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight, undefined, 'FAST');
     
         // Sauvegarde le PDF
-        pdf.save('document.pdf');
+        pdf.save('cv.pdf');
     }
     return(
         <>
@@ -112,6 +112,7 @@ export default function AfficherPreview({infoPerso ,infoFormation , infoPro , in
                     <h1>{infoPerso.fullname}</h1>
                     <p>{infoPerso.func}</p>
                 </div>
+                <hr />
                 <div id="formation">
                     <h2>Formation</h2>
                     {infoFormation.map((forma,i)=>{
