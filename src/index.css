@@ -13,13 +13,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+section {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  justify-content: space-around;
 }
+
 
 h1 {
   font-size: 3.2em;
@@ -41,4 +42,18 @@ button {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media screen and (max-width:700px) {
+  #root{
+    padding: 5px;
+  }
+  section{
+    flex-direction: column;
+  }
+  .choixButton{
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
 }

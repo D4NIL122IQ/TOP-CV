@@ -175,29 +175,37 @@ label{
 .cvpdf{
     background-color: #fff;
     color: black;
-    width: 70vw;
-    height: 297mm;
+    width: 800px;
+    height: 1130px;
     display: flex;
     text-align: start;
 }
+
 #aside{
     background-color: grey;
-    padding: 10px;
-    width: 30vw;
-    word-wrap: break-word; 
-    word-break: break-all; 
+    padding: 5px;
+    width: 37.5%;
+    word-wrap: break-word;  
     white-space: normal; 
+}
+#aside>div{
+    margin: 40px 0px;
 }
 #aside>div>h2{
     text-align: center;
     text-decoration: underline;
     font-size: x-large;
+    margin-bottom: 10px;
 }
 #info{
     display: flex;
     gap: 10px;
+    margin-bottom: 10px;
 }
 
+ul{
+  padding: 5px 30px;  
+}
 li{
     list-style:square;
     font-size: large;
@@ -210,8 +218,8 @@ li{
     text-transform: capitalize;
 }
 #article{
-    padding: 10px;
-    width: 70vw;
+    padding: 5px;
+    width: 72.5%;
     word-wrap: break-word; 
     word-break: break-all; 
     white-space: normal; 
@@ -220,29 +228,24 @@ li{
     text-align: center;
 }
 #head>h1{
-    margin: 0px;
     font-size: 4rem;
 }
 #head>p{
-    margin: 0px;
     font-weight: bold;
 }
 
 #formation>h2,
 #Exp>h2{
     text-align: center;
-    margin: 0px;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-decoration: underline;
 }
-#formation>div>h4{
-    margin: 0px;
-}
+
 #article>hr{
     border: none;
     border-top: 2px double black;
-    height: 3px;
-    margin: 5px;
+    height: 2px;
+    margin: 0px 50px;
 }
 #experience>div{
     display: flex;
@@ -251,8 +254,52 @@ li{
 }
 #experience,
 #education{
-    padding: 15px;
+    padding: 2px 15px;
+}
+footer{
+    text-align: center;
+}
+a{
+    margin: 0px;
+    text-decoration: none;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+ a:visited {
+    color: white;
+}
+a:hover{
+    color: rgb(44, 103, 180);
+    text-decoration: line-through;
+    transform: scale(1.2);
 }
 @media screen and (max-width: 600px) {
-    
+    .cvpdf{
+        width: 400px;
+        height: 565px;
+        font-size: 1rem;
+    }
+    h4{
+        font-size: 0.8rem;
+    }
+    #aside{
+        width: 40%;
+    }
+    #article{
+        width: 60%;
+    }
+    #head>h1{
+        font-size: 1.5rem;
+    }
+    #formation>h2,
+    #Exp>h2{
+        font-size: 1.2rem;
+    }
+    #aside>div>h2{
+        font-size: 1.1rem;
+    }
+
 }
