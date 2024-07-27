@@ -22,29 +22,29 @@ function App() {
 
   const [infoperso, majInfoperson] =useState({
     fullname:"Hatake Kakashi",
-    func:"Enseignant",
+    func:"Dev senior",
     mail:"kakashi@exemple.com",
     adrs:"12 rue jsp, Konoha",
     phone: "+1 123-456-789"})
    
   const [formation ,setFormation] =useState([{
     school: "abderahmane mira",
-    degree: "Licence",
+    degree: "Licence informatique",
     start: "2022",
-    end: "2025",
-    location: "bejaia"
+    end: "Present",
+    location: "Bejaia"
     }])
 
   const [experience , setExperience] = useState([{
     company:"Dawasushi",
-    fonction:"Devloppeur web",
+    fonction:"Dev web",
     location: "Bejaia",
-    description: "je me suis occuper de frontend de leurs site presentation",
+    description: "site vitrine",
     start:"Juin 2024",
-    end: "Maintenant"
+    end: "Prensent"
   }])
   const [techSkillDispo , settechSkillDispo] = useState([
-    {title:"Language" ,description:"HTML, CSS, JavaScript"},
+    {title:"Language" ,description:"C, Python, JavaScript"},
     {title:"framework", description:"React, NodeJs"}])
 
   const [skills , setSkills] = useState([
