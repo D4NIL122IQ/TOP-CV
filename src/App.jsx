@@ -79,15 +79,15 @@ function App() {
     <section>
       {/* buttons pour choisir une section */}
     <div className='choixButton'>
-      <button onClick={()=>{ setprofil(!profil) }}> Profil </button>
+      <button onClick={()=>{ setprofil(!profil) }}>Profil</button>
 
-      <button onClick={()=>{ seteducation(!education)}}> Ajouter Education</button>
+      <button onClick={()=>{ seteducation(!education)}}>Education</button>
 
       <button onClick={()=>{ setExp(!exp)}}>Experience</button>
 
-      <button onClick={()=>{ setskill(!skill)}}> Skills </button>
+      <button onClick={()=>{ setskill(!skill)}}>Compétence</button>
 
-      <button onClick={()=>{ settech(!tech)}}> Technical Skills </button>
+      <button onClick={()=>{ settech(!tech)}}>Compétence Technique</button>
     </div>
 
     {/* modal de chaque section */}
